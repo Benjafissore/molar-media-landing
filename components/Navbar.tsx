@@ -3,11 +3,12 @@
 import { useState } from "react";
 import { SITE } from "@/lib/constants";
 import Image from "next/image";
+import Link from "next/link";
 
 const navLinks = [
-  { label: "How It Works", href: "#process" },
-  { label: "Why It Works", href: "#why" },
-  { label: "FAQ", href: "#faq" },
+  { label: "How It Works", href: "/#process" },
+  { label: "Why It Works", href: "/#why" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export default function Navbar() {
@@ -20,14 +21,16 @@ export default function Navbar() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         {/* Logo + links together on the left */}
         <div className="flex items-center gap-10">
-          <Image
-            src="/molar-media-logo-transparent-original.png"
-            alt="Molar Media"
-            width={160}
-            height={44}
-            className="h-14 w-auto flex-shrink-0 object-contain"
-            preload={true}
-          />
+          <Link href="/" className="flex flex-shrink-0 items-center">
+            <Image
+              src="/molar-media-logo-transparent-original.png"
+              alt="Molar Media"
+              width={160}
+              height={44}
+              className="h-14 w-auto flex-shrink-0 object-contain"
+              preload={true}
+            />
+          </Link>
           <div className="hidden items-center gap-8 md:flex">
             {navLinks.map((link) => (
               <a

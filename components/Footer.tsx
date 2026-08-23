@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { SITE } from "@/lib/constants";
 
 export default function Footer() {
@@ -73,7 +74,15 @@ export default function Footer() {
         <div className="mt-8 border-t border-white/10 pt-5">
           <div className="flex flex-col gap-3 text-sm text-white/36 md:flex-row md:items-center md:justify-between">
             <p>Built for dental clinics ready to reactivate their existing database.</p>
-            <p>Molar Media · Email + SMS Reactivation</p>
+            <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-6">
+              <Link
+                href="/terms-and-conditions"
+                className="transition-colors duration-200 hover:text-white"
+              >
+                Terms &amp; Conditions
+              </Link>
+              <p>Molar Media · Email + SMS Reactivation</p>
+            </div>
           </div>
         </div>
       </div>
